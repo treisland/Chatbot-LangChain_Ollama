@@ -1,20 +1,21 @@
+"""
+This a simple chat loop with no history
+"""
+
 import os
-
-#chat loop with history
-
 from dotenv import load_dotenv
 from langchain_community.chat_models import ChatOllama
 
 load_dotenv()
 
 llm = ChatOllama(
-    base_url=os.getenv("OLLAMA_DEFAULT_SERVER"),
-    model=os.getenv("OLLAMA_DEFAULT_MODEL")
+    base_url=os.getenv("OLLAMA_HOST"),
+    model=os.getenv("OLLAMA_MODEL")
 )
 
 while True:
 
-    prompt = input("\nUser: ")
+    prompt = input("\n\nUser: ")
 
     if prompt == "exit":
         break
@@ -23,25 +24,4 @@ while True:
 
     print(f"\nAssistant: {response.content}", end="", flush=True)
 
-    import os
-
-    from dotenv import load_dotenv
-    from langchain_community.chat_models import ChatOllama
-
-    load_dotenv()
-
-    llm = ChatOllama(
-        base_url=os.getenv("OLLAMA_DEFAULT_SERVER"),
-        model=os.getenv("OLLAMA_DEFAULT_MODEL")
-    )
-
-    while True:
-        prompt = input("\n\nUser: ")
-
-        if prompt.lower() == "exit":
-            break
-
-        response = llm.invoke(prompt)
-
-        print(f"\nAssistant: {response.content}", end="", flush=True)
 
