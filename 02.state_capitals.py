@@ -1,5 +1,6 @@
 """
 AI assistant that answers questions about state capitals.
+It uses prompt templates to generate the prompts and the output parser to make the AI response more readable.
 """
 
 import os
@@ -10,9 +11,10 @@ from langchain_core.output_parsers import StrOutputParser
 
 load_dotenv()
 
+
 llm = ChatOllama(
-    base_url=os.getenv("OLLAMA_DEFAULT_SERVER"),
-    model=os.getenv("OLLAMA_DEFAULT_MODEL")
+    base_url=os.getenv("OLLAMA_HOST"),
+    model=os.getenv("OLLAMA_MODEL")
 )
 
 prompt = ChatPromptTemplate.from_messages([

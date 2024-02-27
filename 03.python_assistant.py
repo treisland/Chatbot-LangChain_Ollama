@@ -1,5 +1,6 @@
 """
 A simple python assistant that answers questions about python programming.
+It uses prompt templates to generate the prompts and the output parser to make the AI response more readable.
 """
 
 import os
@@ -14,8 +15,8 @@ load_dotenv()
 # Create a ChatOllama instance
 
 llm = ChatOllama(
-    model=os.getenv("OLLAMA_DEFAULT_MODEL"),
-    base_url=os.getenv("OLLAMA_DEFAULT_SERVER")
+    base_url=os.getenv("OLLAMA_HOST"),
+    model=os.getenv("OLLAMA_MODEL")
 )
 
 chat_history = []
