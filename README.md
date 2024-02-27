@@ -4,12 +4,38 @@
 
 A series of simple chatbots that can be used to demonstrate the use of the LangChain API and Ollama.
 
+## Requirements
+
+- Python 3.12 or higher
+- Ollama server, see https://ollama.com/
+- Local model in Ollama, see https://ollama.com/library
+
+    ```
+    ollam run <model name>
+    ```
+- .env (see the **Environment Variables** section)
+
+
+## Environment Variables.
+These projects read the Ollama server and model from environment variables.
+
+Create a file in the project root called `.env` and add the following variables:
+```
+OLLAMA_HOST: <ollama server> (default: http://localhost:11434)
+OLLAMA_MODEL: <model name>
+```
+
+**DO NOT COMMIT THE .env FILE**
+
 ## Installation
 
 1. Clone the repository
 2. Create a python virtual environment
 3. Install the requirements `pip install -r requirements.txt`
 4. Run a chatbot `python <chatbot>.py`
+
+
+
 
 
 ## List of chatbots
