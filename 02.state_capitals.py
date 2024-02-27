@@ -1,9 +1,8 @@
+"""
+AI assistant that answers questions about state capitals.
+"""
+
 import os
-
-'''
-Chat template for state capitals that streams back the response
-'''
-
 from dotenv import load_dotenv
 from langchain_community.chat_models import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
